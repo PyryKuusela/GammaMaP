@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1138802,      29759]
+NotebookDataLength[   1138807,      29759]
 NotebookOptionsPosition[   1014123,      28012]
-NotebookOutlinePosition[   1016611,      28067]
-CellTagsIndexPosition[   1016417,      28059]
+NotebookOutlinePosition[   1016616,      28067]
+CellTagsIndexPosition[   1016422,      28059]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25748,7 +25748,7 @@ Cell[TextData[{
   3.7572564410247917`*^9}},ExpressionUUID->"ba624664-9b2a-482a-9059-\
 876f3f802542"]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -27775,7 +27775,7 @@ Cell[TextData[Cell[BoxData[
  TextAlignment->Center,ExpressionUUID->"961c7de6-569c-4607-8393-941bfb471d98"]
 }, Closed]]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -28007,11 +28007,11 @@ Cell[TextData[{
  CellChangeTimes->{{3.7656084283830748`*^9, 3.765608494575358*^9}},
  CellTags->
   "References",ExpressionUUID->"18d1dfb9-a644-42ab-ab7f-f51cab68f71d"]
-}, Open  ]]
+}, Closed]]
 }, Open  ]]
 },
 WindowSize->{958, 1017},
-WindowMargins->{{1, Automatic}, {1, Automatic}},
+WindowMargins->{{Automatic, 271}, {-113, Automatic}},
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -28020,12 +28020,6 @@ StyleDefinitions->"Default.nb"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Special_Rep"->{
-  Cell[21104, 517, 3684, 105, 193, "Text",ExpressionUUID->"850d77e7-3156-4084-a3a4-d929d8908606",
-   CellTags->"Special_Rep"]},
- "Unitary_Rep_Transformation"->{
-  Cell[26223, 658, 620, 19, 37, "Text",ExpressionUUID->"0d0af2c8-0be9-4eba-aeab-737e7343f6be",
-   CellTags->"Unitary_Rep_Transformation"]},
  "C-relations"->{
   Cell[31890, 827, 1010, 29, 60, "Text",ExpressionUUID->"a23e6ff1-8326-4d77-83e1-23288f1043c1",
    CellTags->"C-relations"]},
@@ -28053,15 +28047,21 @@ CellTagsIndex->{
   Cell[1012582, 27963, 578, 15, 35, "Text",ExpressionUUID->"2dadf51d-52a3-4d0a-b9c6-29184f759131",
    CellTags->"References"],
   Cell[1013163, 27980, 932, 28, 58, "Text",ExpressionUUID->"18d1dfb9-a644-42ab-ab7f-f51cab68f71d",
-   CellTags->"References"]}
+   CellTags->"References"]},
+ "Special_Rep"->{
+  Cell[21104, 517, 3684, 105, 193, "Text",ExpressionUUID->"850d77e7-3156-4084-a3a4-d929d8908606",
+   CellTags->"Special_Rep"]},
+ "Unitary_Rep_Transformation"->{
+  Cell[26223, 658, 620, 19, 37, "Text",ExpressionUUID->"0d0af2c8-0be9-4eba-aeab-737e7343f6be",
+   CellTags->"Unitary_Rep_Transformation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Special_Rep", 1014409, 28022},
- {"Unitary_Rep_Transformation", 1014570, 28025},
- {"C-relations", 1014728, 28028},
- {"References", 1014871, 28031}
+ {"C-relations", 1014414, 28022},
+ {"References", 1014557, 28025},
+ {"Special_Rep", 1016098, 28050},
+ {"Unitary_Rep_Transformation", 1016259, 28053}
  }
 *)
 (*NotebookFileOutline
@@ -29636,9 +29636,9 @@ Cell[934118, 25709, 1125, 25, 53, "Output",ExpressionUUID->"36abd23f-9f79-4a68-8
 }, Open  ]],
 Cell[935258, 25737, 437, 11, 58, "Text",ExpressionUUID->"ba624664-9b2a-482a-9059-876f3f802542"]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[935744, 25754, 622, 9, 65, "Subchapter",ExpressionUUID->"b28241a6-0bb8-4767-9dbc-ad4d661c4f8f"],
+Cell[935744, 25754, 622, 9, 49, "Subchapter",ExpressionUUID->"b28241a6-0bb8-4767-9dbc-ad4d661c4f8f"],
 Cell[936369, 25765, 726, 13, 127, "Text",ExpressionUUID->"94582e7a-dae6-4d7f-9cd5-970150899e0e"],
 Cell[CellGroupData[{
 Cell[937120, 25782, 435, 7, 45, "Subsubsection",ExpressionUUID->"1f997d5f-d46c-4fb4-86ca-f805e30ceff8"],
@@ -29732,9 +29732,9 @@ Cell[1005442, 27749, 166, 3, 35, "Text",ExpressionUUID->"cd9c6d1a-0d1e-4c16-a08b
 Cell[1005611, 27754, 792, 20, 47, "Text",ExpressionUUID->"961c7de6-569c-4607-8393-941bfb471d98"]
 }, Closed]]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[1006464, 27781, 743, 11, 69, "Chapter",ExpressionUUID->"1be0ab6d-de14-4c58-b80c-b9a037fa5c0c"],
+Cell[1006464, 27781, 743, 11, 58, "Chapter",ExpressionUUID->"1be0ab6d-de14-4c58-b80c-b9a037fa5c0c"],
 Cell[1007210, 27794, 801, 22, 58, "Text",ExpressionUUID->"dc56b5a4-c00f-4fa3-8f85-e1caa33da84a",
  CellTags->"References"],
 Cell[1008014, 27818, 544, 15, 58, "Text",ExpressionUUID->"5e106648-42b4-407f-9851-f6b12db00e1b",
@@ -29759,7 +29759,7 @@ Cell[1012582, 27963, 578, 15, 35, "Text",ExpressionUUID->"2dadf51d-52a3-4d0a-b9c
  CellTags->"References"],
 Cell[1013163, 27980, 932, 28, 58, "Text",ExpressionUUID->"18d1dfb9-a644-42ab-ab7f-f51cab68f71d",
  CellTags->"References"]
-}, Open  ]]
+}, Closed]]
 }, Open  ]]
 }
 ]
