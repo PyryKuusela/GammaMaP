@@ -1492,21 +1492,23 @@ $gDealWithTensors[$x_]:=$x
 (*Get only those index pairs that appear in the same tensor*)
 $gGetRepeatedIndexPairs[expr_]:=Module[{indexStruct=$gFindIndexStructureNew[expr],repeated=DeleteCases[$gGetRepeatedElements[$gRemoveUpDown[$gFindIndices[expr]]],_Integer],pairs},
 pairs=DeleteCases[DeleteDuplicates[Sort/@Flatten[Table[{$i,$j},{$i,repeated},{$j,repeated}],1]],{x_,x_}];
-DeleteCases[Table[If[Select[indexStruct,SubsetQ[$gRemoveUpDown[$gFindIndices[#[[1,1]]]],pairs[[$i]]]&]=={},{},pairs[[$i]]],{$i,1,Length[pairs]}],{}]
+DeleteCases[DeleteCases[Table[If[Select[indexStruct,SubsetQ[$gRemoveUpDown[$gFindIndices[#[[1,1]]]],pairs[[$i]]]&]=={},{},pairs[[$i]]],{$i,1,Length[pairs]}],{}],{$aIndex_,$aIndex_}]
 ]
 
 $gFindTermsContainingIndex[expr_,index_]:=Cases[$gFindIndexStructureNew[expr],{{F_,g___},{A___,{\[Alpha]___,f_[a___,index,b___],\[Beta]___},B___}}]/;!TrueQ[Head[expr]==List]
 
-$gCheckSymmetry[expr_,{index1_,index2_}]:=Module[{terms=Join[$gFindTermsContainingIndex[expr,index1],$gFindTermsContainingIndex[expr,index2]]//DeleteDuplicates,twoIndices,oneIndex,indexStruct},
+$gCheckSymmetry[expr_,{index1_,index2_}]:=Module[{terms=Join[$gFindTermsContainingIndex[expr,index1],$gFindTermsContainingIndex[expr,index2]]//DeleteDuplicates,twoIndices,oneIndex,indexStruct,selfContractions},
 indexStruct=$gFindIndexStructureNew[expr];
 twoIndices=Select[indexStruct,SubsetQ[$gRemoveUpDown[Flatten[#[[2]]]],{index1,index2}]&];
 oneIndex=Select[Complement[indexStruct,twoIndices],SubsetQ[$gRemoveUpDown[Flatten[#[[2]]]],{index1}]||SubsetQ[$gRemoveUpDown[Flatten[#[[2]]]],{index2}]&];
-
+selfContractions=Join[Select[indexStruct,Length[Cases[{$gRemoveUpDown[Flatten[#[[2]]]]},{$aIndex___,index1,$bIndex___,index1,$cIndex___}]]>=1&],Select[indexStruct,Length[Cases[{$gRemoveUpDown[Flatten[#[[2]]]]},{$aIndex___,index2,$bIndex___,index2,$cIndex___}]]>=1&]];
+If[Length[selfContractions]>=1,True,
 If[Length[terms]==4,True,
 If[Length[terms]==3,
 TrueQ[$gFindSymmetry[twoIndices[[1,1,1]],{index1,index2}]==$gFindSymmetry[oneIndex[[1,1,1]]*oneIndex[[2,1,1]],{index1,index2}]]||TrueQ[$gFindSymmetry[twoIndices[[1,1,1]],{index1,index2}]==False]||TrueQ[$gFindSymmetry[oneIndex[[1,1,1]]*oneIndex[[2,1,1]],{index1,index2}]==False],
 If[Length[terms]==2,
 If[Length[twoIndices]==1,True,TrueQ[$gFindSymmetry[twoIndices[[1,1,1]],{index1,index2}]==$gFindSymmetry[twoIndices[[2,1,1]],{index1,index2}]]||TrueQ[$gFindSymmetry[twoIndices[[1,1,1]],{index1,index2}]==False]||TrueQ[$gFindSymmetry[twoIndices[[2,1,1]],{index1,index2}]==False]
+]
 ]
 ]
 ]
@@ -1592,7 +1594,7 @@ Clear[$gSimplify2]
 
 
 $gSimplify2[x_]:=$gSimplify[x//.$gRaisingRules[$gFindIndexStructureNew[x],{}]]/;!TrueQ[$gRaisingRules[$gFindIndexStructureNew[x],{}]=={}]
-$gSimplify2[x_]:=$gDealWithTensors[x]/.$gIndexRules[$gFindIndexStructureNew[x]]
+$gSimplify2[x_]:=$gDealWithTensors[x/.$gIndexRules[$gFindIndexStructureNew[x]]]
 
 (*****************Bilinears for Weyl and Majorana spinors********************)
 $gFindChirality[gTimes[$x_,$y__]]:=$gFindChirality2[Join[{$gFindChirality[$x]},{$gFindChirality[gTimes[$y]]}]]
