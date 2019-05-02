@@ -2837,6 +2837,12 @@ gSetDecomposition[y,n_Integer,decomposition_]:=($gGetDecomposition[y[{u[gx$_]},0
 (********Clear custom decompositions***********)
 gClearDecompositions[]:=(
 Clear[$gGetDecomposition];
+Table[$gOriginalgAConvention[$i]=$gAConvention[$i],{$i,0,$gNumOfSubReps}];
+Table[$gOriginalgCConvention[$i]=$gCConvention[$i],{$i,0,$gNumOfSubReps}];
+Table[$gOriginalgBConvention[$i]=$gBConvention[$i],{$i,0,$gNumOfSubReps}];
+Table[$gAConvention[$i]="DoNothing",{$i,0,$gNumOfSubReps}];
+Table[$gBConvention[$i]="DoNothing",{$i,0,$gNumOfSubReps}];
+Table[$gCConvention[$i]="DoNothing",{$i,0,$gNumOfSubReps}];
 
 $gGetDecomposition[Plus[x_,y__]]:=$gGetDecomposition[x]+$gGetDecomposition[Plus[y]];
 $gGetDecomposition[Times[x_,y__]]:=$gGetDecomposition[x]*$gGetDecomposition[Times[y]];
@@ -3006,6 +3012,9 @@ $gGetDecomposition[Inverse[X_]]:=Inverse[$gGetDecomposition[X]];
 (*******************  Others **************)
 
 $gGetDecomposition[x_]:=x;
+Table[$gAConvention[$i]=$gOriginalgAConvention[$i],{$i,0,$gNumOfSubReps}];
+Table[$gBConvention[$i]=$gOriginalgBConvention[$i],{$i,0,$gNumOfSubReps}];
+Table[$gCConvention[$i]=$gOriginalgCConvention[$i],{$i,0,$gNumOfSubReps}];
 )
 
 
